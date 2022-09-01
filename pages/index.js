@@ -12,9 +12,33 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Formulário que atende a lei LGPD feito com <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <fieldset>
+          <legend>Formulário</legend>
+          <form action="https://formspree.io/f/xayaljzg" method="POST">
+            <label htmlFor="name">Nome:    </label>
+            <input type="text" name="name" id="name" />
+            <br/>
+            <label htmlFor="cpf">CPF:    </label>
+            <input type="text" name="cpf" id="cpf" /> <p>utilizamos o cpf para validar junto a receita federaal a sua identidade</p>
+            <br/>
+            <label htmlFor="idade">Idade:    </label>
+            <input type="number" name="idade" id="idade" />
+            <p>Este serviço só pode ser acessado por maiores de 17 anos, por isso precisamos armazenar a sua idade</p>
+            <br/>
+            {/* utilizando gênero personalizado */}
+            <label htmlFor="genero">Gênero:    </label>
+            <select name="genero" id="genero">
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+            <p>Opcional, não precisamos do gênero, mas se for informado o serviço será customizado para você</p>
+            <br/>
+            <p>A proteção de dados é nossa prioridade. Para obter mais informações 
+              </p><p>sobre como trataremos os seus dados, clique aqui para acessar a nossa política de privacidade</p>
+            <button type="submit">Enviar</button>
+          </form>
+        </fieldset>
       </main>
 
       <footer className={styles.footer}>
